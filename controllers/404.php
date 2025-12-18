@@ -1,7 +1,7 @@
 <?php
 http_response_code(404);
 
-$title = "Page Not Found";
+$title = "404 Not Found";
 $view = 'views/404.php';
 
 require '../templates/layout.php';
