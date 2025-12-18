@@ -20,4 +20,4 @@ if (!empty($_POST)) {
 }
 
 
-require 'templates/layout.php';
+require '../templates/layout.php';
