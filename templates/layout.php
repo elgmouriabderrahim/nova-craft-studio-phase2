@@ -10,7 +10,7 @@
 
     <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/../templates/header.php'; ?>
 
-    <main class="min-h-screen">
+    <main class="min-h-[85vh]">
         <?php
             include $_SERVER['DOCUMENT_ROOT'] . '/../' . $view;
         ?>
