@@ -2,4 +2,4 @@
 $title = "NovaCraft Studio - Sign Up";
 $view = 'views/signup.php';
 
-require 'templates/layout.php';
+require '../templates/layout.php';
