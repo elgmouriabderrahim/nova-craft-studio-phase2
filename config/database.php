@@ -1,5 +1,5 @@
 <?php
-
+require_once "env.php";
 $mysqli = new mysqli(
     hostname: $_ENV['DB_HOST'],
     password: $_ENV['DB_PASS'],
