@@ -18,12 +18,6 @@
       <li>
         <a href="/contact" class="<?= $current === '/contact' ? 'text-blue-600 font-medium' : 'hover:text-blue-600' ?>">Contact</a>
       </li>
-      <li>
-        <button class="px-8  border border-gray-600 rounded-md hover:bg-neutral-100 <?= $current === '/signin' ? 'hidden' : 'inline' ?>"><a href="/signin">Sign In</a></button>
-      </li>
-      <li>
-        <button class="px-8  border border-gray-600  rounded-md hover:bg-neutral-100 <?= $current === '/signup' ? 'hidden' : 'inline' ?>"><a href="/signup">Sign Up</a></button>
-      </li>
     </ul>
   </nav>
 </header>
