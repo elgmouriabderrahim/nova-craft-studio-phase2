@@ -1,12 +1,13 @@
 <?php
 
 $mysqli = new mysqli(
-    hostname: 'localhost',
-    username: 'root',
+    hostname: $_ENV['DB_HOST'],
     password: $_ENV['DB_PASS'],
-    database: 'novacraft'
+    username: $_ENV['DB_USER'],
+    database: $_ENV['DB_NAME']
 );
 
 if ($mysqli->connect_error) {
     die('erreur de connexion a la base de donnees : ' . $mysqli->connect_error);
 }
+return $mysqli;
