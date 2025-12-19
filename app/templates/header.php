@@ -18,6 +18,9 @@
       <li>
         <a href="/contact" class="<?= $current === '/contact' ? 'text-blue-600 font-medium' : 'hover:text-blue-600' ?>">Contact</a>
       </li>
+      <li>
+        <a class="px-8  border border-gray-600 rounded-md hover:bg-neutral-100 <?= ($current === '/signin' ||  $current === '/signup') ? 'hidden' : 'inline' ?>" href = "/logout">Sign Out</a>
+      </li>
     </ul>
   </nav>
 </header>

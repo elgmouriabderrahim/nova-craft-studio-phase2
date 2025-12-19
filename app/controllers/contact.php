@@ -1,4 +1,8 @@
 <?php
+if (empty($_SESSION['logged'])) {
+    header("Location: /signin");
+    exit;
+}
 $title = "NovaCraft Studio - Contact";
 $view = __DIR__ . '/../views/contact.php';
 
