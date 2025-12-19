@@ -8,15 +8,15 @@
 </head>
 <body>
 
-    <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/../templates/header.php'; ?>
+    <?php require_once 'header.php'; ?>
 
     <main class="min-h-[85vh]">
         <?php
-            include $_SERVER['DOCUMENT_ROOT'] . '/../' . $view;
+            include $view;
         ?>
     </main>
 
-    <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/../templates/footer.php'; ?>
+    <?php require_once  'footer.php'; ?>
 
 </body>
 </html>
