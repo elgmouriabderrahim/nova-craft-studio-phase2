@@ -20,7 +20,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $password  = $_POST['password'] ?? '';
     $cpassword = $_POST['cpassword'] ?? '';
 
-    // store old inputs (IMPORTANT FIX)
     $old = [
         'email' => $email,
         'fullname' => $fullname
@@ -28,7 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
     $name_regex = "/^[a-zA-Z\s]{3,}$/";
 
-    // validation
     if (empty($email)) {
         $errors['email'] = "Email required";
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -51,11 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $errors['cpassword'] = "Passwords do not match";
     }
 
-    // stop here if errors exist (CRITICAL FIX)
-    if (!empty($errors)) {
-        // DO NOT REDIRECT
-    } else {
-        // check email existence
+    if (empty($errors)){
         $stmt = $mysqli->prepare("SELECT id FROM users WHERE email = ?");
         $stmt->bind_param('s', $email);
         $stmt->execute();
@@ -64,7 +58,6 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         if ($result->num_rows > 0) {
             $errors['email'] = "This email already exists";
         } else {
-            // insert user
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
             $stmt = $mysqli->prepare(
