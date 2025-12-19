@@ -24,6 +24,9 @@
         <a href="/contact" class="<?php echo $current === '/contact' ? 'text-blue-600 font-medium ' : 'hover:text-blue-600 '; echo $show ?>">Contact Us</a>
       </li>
       <li>
+        <a href="/profile" class="border border-black rounded-full p-1  flex justify-center align-center <?php echo $current === '/profile' ? 'text-blue-600 font-medium ' : 'hover:text-blue-600 '; echo $show ?>"><i class="fa-solid fa-user"></i></a>
+      </li>
+      <li>
         <a class="px-8  border border-gray-600 rounded-md hover:bg-neutral-100 <?php echo $show ?>" href = "/logout">Sign Out</a>
       </li>
     </ul>
