@@ -1,6 +1,6 @@
 <?php
 $title = "NovaCraft Studio - Contact";
-$view = 'views/contact.php';
+$view = __DIR__ . '/../views/contact.php';
 
 
 $name = $email = $message = "";
@@ -20,4 +20,4 @@ if (!empty($_POST)) {
 }
 
 
-require '../templates/layout.php';
+require __DIR__ . '/../templates/layout.php';
