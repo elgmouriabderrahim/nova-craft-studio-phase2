@@ -1,3 +1,3 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . "/../routes/route.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/../router/router.php";
