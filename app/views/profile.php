@@ -22,6 +22,10 @@
                 <span class="text-gray-900"><?= htmlspecialchars($user['email']) ?></span>
             </div>
             <div class="flex justify-between">
+                <span class="font-medium text-gray-700">Role:</span>
+                <span class="text-gray-900"><?= htmlspecialchars($user['role']) ?></span>
+            </div>
+            <div class="flex justify-between">
                 <span class="font-medium text-gray-700">Account Created:</span>
                 <span class="text-gray-900"><?= htmlspecialchars($user['created_at']) ?></span>
             </div>

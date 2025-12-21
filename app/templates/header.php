@@ -24,6 +24,9 @@
         <a href="/contact" class="<?php echo $current === '/contact' ? 'text-blue-600 font-medium ' : 'hover:text-blue-600 '; echo $show ?>">Contact Us</a>
       </li>
       <li>
+        <a href="/admin" class="<?php echo $current === '/admin' ? 'text-blue-600 font-medium ' : 'hover:text-blue-600 '; echo isset($_SESSION['role']) && $_SESSION['role'] === 'admin' ? 'inline':'hidden' ?>">Dashboard</a>
+      </li>
+      <li>
         <a href="/profile" class="border border-black rounded-full p-1  flex justify-center align-center <?php echo $current === '/profile' ? 'text-blue-600 font-medium ' : 'hover:text-blue-600 '; echo $show ?>"><i class="fa-solid fa-user"></i></a>
       </li>
       <li>
