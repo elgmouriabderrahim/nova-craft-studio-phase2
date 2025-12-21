@@ -10,7 +10,8 @@ $routes = [
     '/signin'   => '/../app/controllers/signin.php',
     '/signup'   => '/../app/controllers/signup.php',
     '/profile'   => '/../app/controllers/profile.php',
-    '/logout'   => '/../app/controllers/logout.php'
+    '/logout'   => '/../app/controllers/logout.php',
+    '/admin'   => '/../app/controllers/admin.php',
 ];
 
 if (array_key_exists($uri, $routes)) {
