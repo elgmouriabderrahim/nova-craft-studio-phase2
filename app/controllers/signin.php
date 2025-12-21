@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (empty($errors)) {
 
-        $stmt = $mysqli->prepare("SELECT id, name, password FROM users WHERE email = ?");
+        $stmt = $mysqli->prepare("SELECT id, role, password FROM users WHERE email = ?");
         $stmt->bind_param('s', $email);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -39,6 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (password_verify($password, $user['password'])) {
                 $_SESSION['logged'] = true;
                 $_SESSION['user_id'] = $user['id'];
+                $_SESSION['role'] = $user['role'];
                 header('Location: /');
                 exit;
             } else {
