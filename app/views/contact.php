@@ -1,10 +1,17 @@
 <section class="container mx-auto py-16">
 
-    <?php if ($success): ?>
+    <?php if ($msg = display_flash('success')): ?>
     <div class="max-w-xl mx-auto bg-green-100 text-green-700 p-4 rounded mb-4">
-        Merci <?=$name ?> ! Votre message a été envoyé avec succès.
+        <?= $msg ?>
     </div>
     <?php endif; ?>
+
+    <?php if ($msg = display_flash('error')): ?>
+    <div class="max-w-xl mx-auto bg-red-100 text-red-700 p-4 rounded mb-4">
+        <?= $msg ?>
+    </div>
+    <?php endif; ?>
+
 
     <h2 class="text-3xl font-bold mb-6 text-center">Contact us</h2>
 
