@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../../config/database.php';
+require_once __DIR__ . '/../../config/flash.php';
 
 if (empty($_SESSION['user_id'])) {
     header("Location: /signin");
@@ -56,10 +57,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         );
 
         if ($stmt->execute()) {
-            $success = true;
-            $name = $email = $message = "";
+            set_flash('success', "thank you $name, your message has been sent succesfully.");
+            header("Location: /contact");
+            exit;
         } else {
-            $errors['general'] = "Something went wrong, try again.";
+            set_flash('error', "Something went wrong, try again.");
+            header("Location: /contact");
+            exit;
         }
     }
 }
