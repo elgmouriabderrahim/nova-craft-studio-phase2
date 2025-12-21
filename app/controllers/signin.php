@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($email)) {
         $errors['email'] = 'Email required';
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors['email'] = 'INVALID EMAIL';
+        $errors['email'] = 'Invalid Email';
     }
 
     if (empty($password)) {
@@ -42,10 +42,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 header('Location: /');
                 exit;
             } else {
-                $errors['password'] = 'wrong password';
+                $errors['info'] = 'wrong credentials';
             }
         } else {
-            $errors['email'] = "account doesn't exist";
+            $errors['info'] = "wrong credentials";
         }
     }
 }
