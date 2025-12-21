@@ -7,7 +7,14 @@
 
   <form method="POST" class="flex flex-col gap-8 items-center bg-[#C9C9C9] rounded-lg w-[90%] max-w-[500px] py-8">
 
-    <!-- Email -->
+  
+    <?php if ($msg = display_flash('success')): ?>
+        <span class="text-green-600"><?= $msg ?></span>
+    <?php endif; ?>
+    <?php if ($msg = display_flash('error')): ?>
+        <span class="text-red-500"><?= $msg ?></span>
+    <?php endif; ?>
+    
     <div class="w-[90%] flex flex-col">
       <label>Email</label>
       <input type="email" name="email"
@@ -18,7 +25,6 @@
       <?php endif; ?>
     </div>
 
-    <!-- Full name -->
     <div class="w-[90%] flex flex-col">
       <label>Full name</label>
       <input type="text" name="fullname"
@@ -29,7 +35,6 @@
       <?php endif; ?>
     </div>
 
-    <!-- Password -->
     <div class="w-[90%] flex flex-col">
       <label>Password</label>
       <input type="password" name="password"
@@ -39,7 +44,6 @@
       <?php endif; ?>
     </div>
 
-    <!-- Confirm password -->
     <div class="w-[90%] flex flex-col">
       <label>Confirm password</label>
       <input type="password" name="cpassword"
@@ -48,10 +52,6 @@
         <span class="text-red-500"><?= $errors['cpassword'] ?></span>
       <?php endif; ?>
     </div>
-
-    <?php if (isset($errors['general'])): ?>
-      <span class="text-red-500"><?= $errors['general'] ?></span>
-    <?php endif; ?>
 
     <button class="w-[90%] h-8 bg-[#2C2C2C] text-white rounded-md">
       Sign Up

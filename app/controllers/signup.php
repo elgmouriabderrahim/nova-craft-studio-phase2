@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/../../config/database.php';
+require_once __DIR__ . '/../../config/flash.php';
 
 if (isset($_SESSION['logged'])) {
     header("Location: /");
@@ -67,11 +68,9 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             $stmt->bind_param('sss', $fullname, $email, $hashedPassword);
 
             if ($stmt->execute()) {
-                $_SESSION['success'] = "Account created successfully";
-                header("Location: /signin");
-                exit;
+                set_flash('success', "Account created successfully");
             } else {
-                $errors['general'] = "Error during signup";
+                set_flash('error', "Error during signup");
             }
         }
     }
