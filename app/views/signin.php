@@ -7,8 +7,10 @@
   </div>
 
   <form method="POST"
-        class="flex flex-col gap-8 items-center bg-[#C9C9C9] rounded-lg w-[90%] max-w-[500px] py-8 h-auto">
-
+        class="flex flex-col gap-8 items-center bg-[#C9C9C9] rounded-lg w-[90%] max-w-[500px] py-8 h-auto" novalidate>
+    <?php if (isset($errors['info'])): ?>
+      <span class="text-red-500 self-center"><?= $errors['info'] ?></span>
+    <?php endif; ?>
     <div class="w-[90%] flex flex-col">
       <label for="email" class="text-black">Email</label>
       <input
