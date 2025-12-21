@@ -19,7 +19,7 @@
         name="email"
         placeholder="email"
         value="<?= htmlspecialchars($email ?? '') ?>"
-        class="rounded-md px-4 h-8 text-black outline-none"
+        class="rounded-md px-4 py-2 w-full text-black outline-none"
       >
       <?php if (isset($errors['email'])): ?>
         <span class="text-red-500"><?= $errors['email'] ?></span>
@@ -33,7 +33,7 @@
         id="password"
         name="password"
         placeholder="password"
-        class="rounded-md px-4 h-8 text-black outline-none"
+        class="rounded-md px-4 py-2 w-full text-black outline-none"
       >
       <?php if (isset($errors['password'])): ?>
         <span class="text-red-500"><?= $errors['password'] ?></span>
