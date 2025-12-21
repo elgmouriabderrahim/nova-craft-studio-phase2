@@ -6,8 +6,7 @@
     <p>Sign in to continue</p>
   </div>
 
-  <form method="POST"
-        class="flex flex-col gap-8 items-center bg-[#C9C9C9] rounded-lg w-[90%] max-w-[500px] py-8 h-auto" novalidate>
+  <form method="POST" class="flex flex-col gap-8 items-center bg-[#C9C9C9] rounded-lg w-[90%] max-w-[500px] py-8 h-auto">
     <?php if (isset($errors['info'])): ?>
       <span class="text-red-500 self-center"><?= $errors['info'] ?></span>
     <?php endif; ?>
