@@ -4,7 +4,7 @@ if (empty($_SESSION['logged'])) {
     exit;
 }
 require_once __DIR__ . '/../../config/database.php';
-$stmt = $mysqli->prepare("SELECT name, email, created_at FROM users WHERE id = ?");
+$stmt = $mysqli->prepare("SELECT name, email, created_at, role FROM users WHERE id = ?");
 $stmt->bind_param('i', $_SESSION['user_id']);
 $stmt->execute();
 $user = $stmt->get_result()->fetch_assoc();
